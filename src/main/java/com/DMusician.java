@@ -32,7 +32,7 @@ public class DMusician {
     public static Jokes joke = new Jokes();
 
     public static void main(String[] args) throws LoginException {
-        jda = JDABuilder.createDefault("ODkzNzIzNDA0MTkxMDM5NDk4.YVfmyA.-SB-msWUhd_jP6I2jL6kr9GDJM0").build();
+        jda = JDABuilder.createDefault("").build();
         jda.getPresence().setStatus(OnlineStatus.IDLE);
         jda.getPresence().setActivity(Activity.watching("professional league players"));
         initializeListeners();
