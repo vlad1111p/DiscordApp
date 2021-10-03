@@ -51,7 +51,7 @@
         <dependency>
             <groupId>org.menudocs</groupId>
             <artifactId>paste-client-java</artifactId>
-            <version>1.0.16</version>
+            <version>1.1.2</version>
         </dependency>
 
 

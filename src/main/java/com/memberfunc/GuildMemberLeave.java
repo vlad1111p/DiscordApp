@@ -9,6 +9,7 @@ import javax.annotation.Nonnull;
 import java.util.Random;
 
 public class GuildMemberLeave extends ListenerAdapter {
+
     String[] messages = {
             "[member] left, the party's over."
     };

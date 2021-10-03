@@ -13,6 +13,7 @@ public class PingCommands implements ICommand{
         );}
     @Override
     public String getHelp(){
+
         return "Shows the current ping from the bot to the discord servers";
     }
     @Override

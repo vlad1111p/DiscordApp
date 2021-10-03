@@ -18,6 +18,7 @@ public class CommandContext implements ICommandContext {
 
     @Override
     public Guild getGuild() {
+
         return this.getEvent().getGuild();
     }
 

@@ -48,6 +48,7 @@ public class HelpCommands implements ICommand {
     }
     @Override
     public List<String> getAliases() {
+
         return List.of("commands", "cmds", "commandlist");
     }
 }
