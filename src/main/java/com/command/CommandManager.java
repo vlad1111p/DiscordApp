@@ -13,8 +13,13 @@ public class CommandManager {
 
     public CommandManager(){
        addCommand(new PingCommands());
+       addCommand(new HelpCommands(this));
+
     }
 
+    public List<ICommand> getCommands(){
+        return commands;
+    }
     private void addCommand(ICommand cmd) {
         boolean nameFound = this.commands.stream().anyMatch((id) -> id.getName().equalsIgnoreCase(cmd.getName()));
 
@@ -28,12 +33,13 @@ public class CommandManager {
     @Nullable
     public ICommand getCommand(String search) {
         String searchLower = search.toLowerCase();
+
         for (ICommand cmd : this.commands) {
             if (cmd.getName().equals(searchLower) || cmd.getAliases().contains(searchLower)) {
                 return cmd;
             }
-
         }
+
         return null;
     }
 
@@ -48,8 +54,6 @@ public class CommandManager {
             List<String> args = Arrays.asList(split).subList(1, split.length);
             CommandContext ctx = new CommandContext(event, args);
             cmd.handle(ctx);
-        } else {
-
         }
 
 
