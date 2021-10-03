@@ -9,6 +9,9 @@ import com.memberfunc.GuildMemberJoin;
 import com.memberfunc.GuildMemberLeave;
 import com.reactions.GuildMessageReceived;
 
+import me.duncte123.botcommons.messaging.EmbedUtils;
+import me.duncte123.botcommons.web.WebUtils;
+import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
@@ -27,6 +30,13 @@ import java.util.List;
 
 public class DMusician {
 
+    private DMusician() throws LoginException {
+        WebUtils.setUserAgent("Mozilla/5.0 ban Vayne#0348 / vlad1111p#8432");
+        EmbedUtils.setEmbedBuilder(()->
+                new EmbedBuilder()
+                        .setColor(Color.BLUE)
+                        .setFooter("Example"));
+    }
 
     public static JDA jda;
     public static String prefix = "/";

@@ -9,7 +9,9 @@ public class HelpCommands implements ICommand {
     private final CommandManager manager;
 
     public HelpCommands(CommandManager manager) {
+
         this.manager = manager;
+
     }
 
     @Override
@@ -35,6 +37,7 @@ public class HelpCommands implements ICommand {
             channel.sendMessage("Nothing found for " + search).queue();
             return;
         }
+        channel.sendMessage(command.getHelp()).queue();
     }
 
     @Override

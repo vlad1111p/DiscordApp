@@ -15,7 +15,8 @@ public class CommandManager {
         addCommand(new PingCommands());
         addCommand(new HelpCommands(this));
         addCommand(new PasteCommand());
-
+        addCommand(new HasteCommand());
+        addCommand(new MemeCommand());
     }
 
     private void addCommand(ICommand cmd) {

@@ -38,6 +38,10 @@ public class Commands extends ListenerAdapter {
             event.getChannel().sendTyping().queue();
             event.getChannel().sendMessage(event.getAuthor().getName()+" suge pula").queue();
         }
+        if (event.getMessage().getContentRaw().contains("ban vayne") && !event.getAuthor().equals(event.getJDA().getSelfUser())) {
+            event.getChannel().sendTyping().queue();
+            event.getChannel().sendMessage("attaboy " +event.getAuthor().getName()).queue();
+        }
 
     }
 }
