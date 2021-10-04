@@ -1,11 +1,11 @@
 package com.commands;
 
-import com.commands.music.JoinCommand;
+import com.music.JoinCommand;
 import com.database.SetPrefixCommand;
+import com.music.PlayCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -24,6 +24,7 @@ public class CommandManager {
         addCommand(new JokeCommand());
         addCommand(new JoinCommand());
         addCommand(new SetPrefixCommand());
+        addCommand(new PlayCommand());
     }
 
     private void addCommand(ICommand cmd) {
