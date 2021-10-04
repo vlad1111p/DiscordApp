@@ -5,6 +5,7 @@ import com.banvayne.Commands;
 import com.banvayne.Jokes;
 
 import com.banvayne.Listener;
+import com.commands.InstagramCommand;
 import com.database.SQLiteDataSource;
 import com.memberfunc.GuildMemberJoin;
 import com.memberfunc.GuildMemberLeave;
@@ -12,13 +13,15 @@ import com.reactions.GuildMessageReceived;
 
 import me.duncte123.botcommons.messaging.EmbedUtils;
 import me.duncte123.botcommons.web.WebUtils;
+
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.JDABuilder;
 import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
-import net.dv8tion.jda.api.entities.TextChannel;
-import net.dv8tion.jda.api.interactions.commands.Command;
+import net.dv8tion.jda.api.requests.GatewayIntent;
+import net.dv8tion.jda.api.utils.cache.CacheFlag;
+
 
 import javax.security.auth.login.LoginException;
 import java.awt.*;
@@ -34,7 +37,7 @@ public class DMusician {
 
     private DMusician() throws LoginException, SQLException {
 
-        SQLiteDataSource.getConnection();
+
         WebUtils.setUserAgent("Mozilla/5.0 ban Vayne#0348 / vlad1111p#8432");
         EmbedUtils.setEmbedBuilder(()->
                 new EmbedBuilder()
@@ -46,8 +49,8 @@ public class DMusician {
     public static String prefix = "/";
     public static Jokes joke = new Jokes();
 
-    public static void main(String[] args) throws LoginException, SQLException {
-        jda = JDABuilder.createDefault(Config.get("TOKEN")).build();
+    public static void main(String[] args) throws LoginException, SQLException, IOException {
+        jda = JDABuilder.createDefault(Config.get("TOKEN")).enableCache(CacheFlag.VOICE_STATE).build();
         jda.getPresence().setStatus(OnlineStatus.IDLE);
         jda.getPresence().setActivity(Activity.watching("professional league players"));
         initializeListeners();

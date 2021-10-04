@@ -27,7 +27,7 @@ public class HelpCommands implements ICommand {
             manager.getCommands().stream().map(ICommand::getName).forEach(
                     (it) -> builder.append('`').append("/").append(it).append("`\n"));
 
-            channel.sendMessage(builder.toString() + "/joke\n/info" + "\n❤" + "\n /clear [how many to clear]").queue();
+            channel.sendMessage(builder.toString() + "/joke\n/info" + "\n❤" + "\n /clear [how many to clear]\n").queue();
 
             return;
         }
