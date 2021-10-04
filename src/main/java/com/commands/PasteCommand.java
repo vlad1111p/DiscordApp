@@ -1,4 +1,4 @@
-package com.command;
+package com.commands;
 import net.dv8tion.jda.api.EmbedBuilder;
 import net.dv8tion.jda.api.entities.TextChannel;
 import org.menudocs.paste.PasteClient;

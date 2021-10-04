@@ -5,6 +5,7 @@ import com.banvayne.Commands;
 import com.banvayne.Jokes;
 
 import com.banvayne.Listener;
+import com.database.SQLiteDataSource;
 import com.memberfunc.GuildMemberJoin;
 import com.memberfunc.GuildMemberLeave;
 import com.reactions.GuildMessageReceived;
@@ -23,6 +24,7 @@ import javax.security.auth.login.LoginException;
 import java.awt.*;
 import java.io.File;
 import java.io.IOException;
+import java.sql.SQLException;
 import java.text.ParseException;
 import java.util.HashMap;
 import java.util.List;
@@ -30,7 +32,9 @@ import java.util.List;
 
 public class DMusician {
 
-    private DMusician() throws LoginException {
+    private DMusician() throws LoginException, SQLException {
+
+        SQLiteDataSource.getConnection();
         WebUtils.setUserAgent("Mozilla/5.0 ban Vayne#0348 / vlad1111p#8432");
         EmbedUtils.setEmbedBuilder(()->
                 new EmbedBuilder()
@@ -42,12 +46,13 @@ public class DMusician {
     public static String prefix = "/";
     public static Jokes joke = new Jokes();
 
-    public static void main(String[] args) throws LoginException {
+    public static void main(String[] args) throws LoginException, SQLException {
         jda = JDABuilder.createDefault(Config.get("TOKEN")).build();
         jda.getPresence().setStatus(OnlineStatus.IDLE);
         jda.getPresence().setActivity(Activity.watching("professional league players"));
         initializeListeners();
         createSaveDirectory();
+        new DMusician();
 
 
 //"ODkzNTE1MzEwMTM5ODUwODE0.YVck-g.cnyz-wwdVxQ4gCslTupTyrD0rbA"

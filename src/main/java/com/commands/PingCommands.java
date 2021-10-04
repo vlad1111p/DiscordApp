@@ -1,4 +1,4 @@
-package com.command;
+package com.commands;
 
 import net.dv8tion.jda.api.JDA;
 

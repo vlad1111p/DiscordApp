@@ -1,7 +1,6 @@
 package com.banvayne;
 
-import com.Config;
-import com.command.CommandManager;
+import com.commands.CommandManager;
 import me.duncte123.botcommons.BotCommons;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.ReadyEvent;

@@ -1,4 +1,4 @@
-package com.command;
+package com.commands;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import me.duncte123.botcommons.messaging.EmbedUtils;

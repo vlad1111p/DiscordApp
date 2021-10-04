@@ -1,5 +1,6 @@
-package com.command;
+package com.commands;
 
+import com.database.SetPrefixCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
@@ -17,6 +18,10 @@ public class CommandManager {
         addCommand(new PasteCommand());
         addCommand(new HasteCommand());
         addCommand(new MemeCommand());
+        addCommand(new WebhookCommand());
+        addCommand(new JokeCommand());
+        addCommand(new InstagramCommand());
+        addCommand(new SetPrefixCommand());
     }
 
     private void addCommand(ICommand cmd) {

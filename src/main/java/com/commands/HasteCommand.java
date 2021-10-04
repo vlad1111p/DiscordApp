@@ -1,4 +1,4 @@
-package com.command;
+package com.commands;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import me.duncte123.botcommons.web.ContentType;
