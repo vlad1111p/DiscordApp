@@ -60,6 +60,49 @@ public class PlayerManager {
             }
 
             @Override
+           public void playlistLoaded(AudioPlaylist playlist) {
+                final List<AudioTrack> tracks = playlist.getTracks();
+
+//                channel.sendMessage("Adding to queue: `")
+//                        .append(String.valueOf(tracks.size()))
+//                        .append("` tracks from playlist `")
+//                        .append(playlist.getName())
+//                        .append('`')
+//                        .queue();
+
+//                for (final AudioTrack track : tracks) {
+                    musicManager.scheduler.queue(tracks.get(1));
+//                }
+            }
+
+            @Override
+            public void noMatches() {
+                //
+            }
+
+            @Override
+            public void loadFailed(FriendlyException exception) {
+                //
+            }
+        });
+    }
+    public void loadAndPlayPl(TextChannel channel, String trackUrl) {
+        final GuildMusicManager musicManager = this.getMusicManager(channel.getGuild());
+
+        this.audioPlayerManager.loadItemOrdered(musicManager, trackUrl, new AudioLoadResultHandler() {
+            @Override
+            public void trackLoaded(AudioTrack track) {
+                musicManager.scheduler.queue(track);
+
+                channel.sendMessage("Adding to queue: `")
+                        .append(track.getInfo().title)
+                        .append("` by `")
+                        .append(track.getInfo().author)
+                        .append('`')
+                        .queue();
+            }
+
+            @Override
             public void playlistLoaded(AudioPlaylist playlist) {
                 final List<AudioTrack> tracks = playlist.getTracks();
 
@@ -71,7 +114,7 @@ public class PlayerManager {
                         .queue();
 
                 for (final AudioTrack track : tracks) {
-                    musicManager.scheduler.queue(track);
+                musicManager.scheduler.queue(track);
                 }
             }
 
