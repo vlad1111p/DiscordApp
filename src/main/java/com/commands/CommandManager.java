@@ -1,8 +1,7 @@
 package com.commands;
 
-import com.music.JoinCommand;
+import com.music.*;
 import com.database.SetPrefixCommand;
-import com.music.PlayCommand;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;
@@ -25,6 +24,10 @@ public class CommandManager {
         addCommand(new JoinCommand());
         addCommand(new SetPrefixCommand());
         addCommand(new PlayCommand());
+        addCommand(new StopCommand());
+        addCommand(new PauseCommand());
+        addCommand(new ClearQueueCommand());
+//        addCommand(new ShowQueueCommand());
     }
 
     private void addCommand(ICommand cmd) {
