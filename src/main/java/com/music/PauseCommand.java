@@ -50,7 +50,7 @@ public class PauseCommand implements ICommand {
 
     @Override
     public String getHelp() {
-        return "pauses the music player";
+        return "pauses the music player or resumes";
     }
 
     @Override

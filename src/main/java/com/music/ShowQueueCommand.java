@@ -29,12 +29,19 @@ public class ShowQueueCommand implements ICommand {
         final GuildMusicManager musicManager = PlayerManager.getInstance().getMusicManager(ctx.getGuild());
         final AudioPlayer player = musicManager.scheduler.getPlayer();
         final BlockingQueue<AudioTrack> queue = musicManager.scheduler.getQueue();
-//        for (int i = 0; i < 30 || i < queue.size(); i++){
-////            queue.stream().toList()
-////                    .forEach(audioTrack -> channel.sendMessage( audioTrack.getSourceManager().getSourceName()).queue());
-//        }
+
+            queue.stream().toList()
+                    .forEach(audioTrack -> channel.sendMessage(audioTrack.getInfo().title +" by "+
+                            audioTrack.getInfo().author).queue());
+
 
     }
+
+//     .append(track.getInfo().title)
+//            .append("` by `")
+//                        .append(track.getInfo().author)
+//            .append('`')
+//                        .queue();
 
     @Override
     public String getName() {

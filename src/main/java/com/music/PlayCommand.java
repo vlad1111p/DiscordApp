@@ -101,6 +101,7 @@ public class PlayCommand implements ICommand {
     @Override
     public String getHelp() {
         return "Plays a song\n" +
+                "can also resume\n"+
                 "Usage: `/play <youtube link>`";
     }
     @Override
