@@ -1,4 +1,4 @@
-package com.music;
+package com.music.commands;
 
 import com.commands.CommandContext;
 import com.commands.ICommand;

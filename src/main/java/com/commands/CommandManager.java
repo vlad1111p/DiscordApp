@@ -1,7 +1,7 @@
 package com.commands;
 
-import com.music.*;
 import com.database.SetPrefixCommand;
+import com.music.commands.*;
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
 
 import javax.annotation.Nullable;

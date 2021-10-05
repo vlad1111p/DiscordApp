@@ -1,7 +1,9 @@
-package com.music;
+package com.music.commands;
 
 import com.commands.CommandContext;
 import com.commands.ICommand;
+import com.music.GuildMusicManager;
+import com.music.PlayerManager;
 import net.dv8tion.jda.api.entities.GuildVoiceState;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.TextChannel;

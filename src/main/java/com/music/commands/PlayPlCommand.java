@@ -1,7 +1,9 @@
-package com.music;
+package com.music.commands;
 
 import com.commands.CommandContext;
 import com.commands.ICommand;
+import com.music.GuildMusicManager;
+import com.music.PlayerManager;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import net.dv8tion.jda.api.Permission;
@@ -18,7 +20,7 @@ import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
 @SuppressWarnings("ConstantConditions")
-public class PlayCommand implements ICommand {
+public class PlayPlCommand implements ICommand {
     @SuppressWarnings("ConstantConditions")
     @Override
 
@@ -52,7 +54,7 @@ public class PlayCommand implements ICommand {
                     link = "ytsearch:" + link;
                 }
 
-                PlayerManager.getInstance().loadAndPlay(channel, link);
+                PlayerManager.getInstance().loadAndPlayPl(channel, link);
                 return;
             }
         }
@@ -80,7 +82,7 @@ public class PlayCommand implements ICommand {
             return;
         }
 
-        PlayerManager.getInstance().loadAndPlay(channel, link);
+        PlayerManager.getInstance().loadAndPlayPl(channel, link);
     }
 
 
@@ -95,18 +97,18 @@ public class PlayCommand implements ICommand {
 
     @Override
     public String getName() {
-        return "play";
+        return "playpl";
     }
 
     @Override
     public String getHelp() {
-        return "Plays a song\n" +
+        return "adds a playlist\n" +
                 "can also resume\n"+
-                "Usage: `/play <youtube link>`";
+                "Usage: `/play <youtube playlist link>`";
     }
     @Override
     public List<String> getAliases() {
-        return Collections.singletonList("start");
+        return Collections.singletonList("ppl");
     }
 }
 

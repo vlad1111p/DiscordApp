@@ -23,7 +23,7 @@ public class Clear extends ListenerAdapter {
                 try {
 
                     List<Message> messages = event.getChannel()
-                            .getHistory().retrievePast(Integer.parseInt(args[1])+1).complete();
+                            .getHistory().retrievePast(Integer.parseInt(args[1])).complete();
                     event.getChannel().deleteMessages(messages).queue();
 
                 } catch (Exception e) {
