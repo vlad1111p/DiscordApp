@@ -2,17 +2,17 @@ package com.music;
 
 import com.commands.CommandContext;
 import com.commands.ICommand;
-import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import net.dv8tion.jda.api.entities.GuildVoiceState;
 import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.TextChannel;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 
-public class ClearQueueCommand implements ICommand {
+public class ShuffleCommand implements ICommand {
     @Override
     public void handle(CommandContext ctx) {
 
@@ -31,27 +31,19 @@ public class ClearQueueCommand implements ICommand {
             return;
         }
 
-        if (ctx.getArgs().isEmpty()) {
-            queue.clear();
-            channel.sendMessage("the queue has been cleared").queue();
-            return;
-        }else{
-            int count = Integer.parseInt(ctx.getArgs().get(0));
-            for (int i=0; i<count;i++ ){
 
-                queue.poll();
-                
-            }
+        ArrayList<AudioTrack> audioTracks = new ArrayList<AudioTrack>(queue.stream().toList());
 
-        }
+        Collections.shuffle(audioTracks);
+        queue.clear();
+        queue.addAll(audioTracks);
 
-
-        channel.sendMessage("The queue has been cleared").queue();
+        channel.sendMessage("The queue has been shuffle ").queue();
     }
 
     @Override
     public String getName() {
-        return "clearqueue";
+        return "shuffle";
     }
 
     @Override
@@ -61,9 +53,6 @@ public class ClearQueueCommand implements ICommand {
 
     @Override
     public String getHelp() {
-        return "clears the amount of songs that you specify\n. " +
-                "If an amount is not specified it will clear the whole queue\n"
-                + "Usage : /clearqueue <amount to delete>\n"
-                + "Usage : /cq <amount to delete>";
+        return "shuffles a queue";
     }
 }

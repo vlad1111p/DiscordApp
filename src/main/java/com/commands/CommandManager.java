@@ -32,6 +32,7 @@ public class CommandManager {
         addCommand(new NowPlayingCommand());
         addCommand(new LeaveCommand());
         addCommand(new PlayPlCommand());
+        addCommand(new ShuffleCommand());
     }
 
     private void addCommand(ICommand cmd) {

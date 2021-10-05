@@ -80,7 +80,7 @@ public class PlayPlCommand implements ICommand {
             return;
         }
 
-        PlayerManager.getInstance().loadAndPlay(channel, link);
+        PlayerManager.getInstance().loadAndPlayPl(channel, link);
     }
 
 
