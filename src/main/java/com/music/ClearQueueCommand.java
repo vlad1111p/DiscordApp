@@ -40,6 +40,7 @@ public class ClearQueueCommand implements ICommand {
             for (int i=0; i<count;i++ ){
 
                 queue.poll();
+                
             }
 
         }

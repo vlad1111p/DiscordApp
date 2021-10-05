@@ -18,10 +18,10 @@ public class SetPrefixCommand implements ICommand {
         final List<String> args = ctx.getArgs();
         final Member member = ctx.getMember();
 
-        if (!member.hasPermission(Permission.MANAGE_SERVER)) {
-            channel.sendMessage("You must have the Manage Server permission to use his command").queue();
-            return;
-        }
+//        if (!member.hasPermission(Permission.MANAGE_SERVER)) {
+//            channel.sendMessage("You must have the Manage Server permission to use his command").queue();
+//            return;
+//        }
 
         if (args.isEmpty()) {
             channel.sendMessage("Missing args").queue();

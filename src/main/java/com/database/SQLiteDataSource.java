@@ -49,6 +49,11 @@ public class SQLiteDataSource implements DatabaseManager {
                     "prefix VARCHAR(255) NOT NULL DEFAULT '" + defaultPrefix + "'" +
                     ");");
 
+            statement.execute("CREATE TABLE IF NOT EXISTS guild_settings (" +
+                    "id INTEGER PRIMARY KEY AUTOINCREMENT," +
+                    "playlist text NOT NULL DEFAULT '" + defaultPrefix + "'" +
+                    ");");
+
             LOGGER.info("Table initialised");
         } catch (SQLException e) {
             e.printStackTrace();
