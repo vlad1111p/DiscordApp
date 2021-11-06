@@ -4,7 +4,7 @@
 In order for this to work you need to add .env file in DiscordAPP folder.
 The .env file needs to contain the following:
 
-TOKEN=
+TOKEN= \n
 CLIENT_ID=
 PREFIX=/
 WEBHOOK_URL= 
