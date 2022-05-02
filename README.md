@@ -14,4 +14,4 @@ WEBHOOK_URL= The webhook url of a channel
 
 To create a webhook url you need to go in your discord server and click on the cogwheel that is located on the right side of the channel nameplate. In the channel settings go to integrations and press new webhook. After that copy the webhook url and paste it in .env file.
 This is a musicbot for Discord with additional features.
-It can take a randome joke or meme from reddit and post it on channle where the command was invoked.
+It can take a random joke or meme from reddit and post it on the channle where the command was invoked.
