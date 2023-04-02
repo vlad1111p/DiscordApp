@@ -1,6 +1,6 @@
 # DiscordApp
 
-(deprecated does not work anymore)
+Edit: (deprecated does not work anymore)
 
 In order for this to work you need to add .env file in DiscordAPP folder.
 The .env file needs to contain the following:
